@@ -12,6 +12,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.IO;
+using CP380_B2_BlockWebAPI.Models;
+using CP380_B1_BlockList.Models;
 
 namespace CP380_B2_BlockWebAPI
 {
@@ -27,6 +29,9 @@ namespace CP380_B2_BlockWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<BlockList>();//Adding Singleton for BlockList
+            services.AddSingleton<BlockSummary>();//Adding Singleton for BlockSummary
+            services.AddSingleton<PendingPayloads>();//Adding Singleton for Payloads
             //
             // TODO:
             //  add singletons
